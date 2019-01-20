@@ -7,9 +7,11 @@
 
                     <div class="card-body">
                         <!-- I'm an example component. -->
-                        <h3>Laravel 5.7  Vue Js Axios Get Tutorial</h3>
+                        <h2>Laravel 5.7  Vue Js <br> Loop Tutorial</h2>
                     </div>
-                       
+                    <!-- <div v-for="post in posts">
+                        {{ post.title }}
+                    </div> -->
                 </div>
             </div>
         </div>

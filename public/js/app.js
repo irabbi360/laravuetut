@@ -1781,6 +1781,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -36670,7 +36672,11 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card card-default" }, [
             _c("div", { staticClass: "card-body" }, [
-              _c("h3", [_vm._v("Laravel 5.7  Vue Js Axios Get Tutorial")])
+              _c("h2", [
+                _vm._v("Laravel 5.7  Vue Js "),
+                _c("br"),
+                _vm._v(" Loop Tutorial")
+              ])
             ])
           ])
         ])
