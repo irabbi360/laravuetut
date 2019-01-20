@@ -1780,9 +1780,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      posts: {}
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
+    this.getData();
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      axios.get('https://jsonplaceholder.typicode.com/posts').then(function (response) {
+        _this.posts = response.data;
+      }).then(function (response) {
+        // handle success
+        //this.posts = response.data;
+        console.log(response.data);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -36646,12 +36669,8 @@ var staticRenderFns = [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _c("h1", [_vm._v("Laravel 5.7  Vue Js Tutorial")])
+              _c("h3", [_vm._v("Laravel 5.7  Vue Js Axios Get Tutorial")])
             ])
           ])
         ])
