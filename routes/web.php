@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/customer', 'CustomerController@index');
+Route::post('/customer-save', 'CustomerController@save');
+Route::get('/customer-list', 'CustomerController@customerList');
