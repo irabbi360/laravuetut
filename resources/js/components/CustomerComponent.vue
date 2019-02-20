@@ -46,7 +46,7 @@
                     <ul class="list-group">
                         <li class="list-group-item active">Customer List</li>
 
-                        <li v-for="(customer, index) in customers" class="list-group-item">{{ index+1 }} {{ customer.name}} - {{ customer.phone }} <a :href="'customer-edit/'+customer.id">Edit</a> </li>
+                        <li v-for="(customer, index) in customers" class="list-group-item">{{ index+1 }} {{ customer.name}} - {{ customer.phone }} <a :href="'customer-edit/'+customer.id">Edit</a> | <a href="javascript:;" @click.prevent="customerDelete(customer.id, index)">Delete</a> </li>
                     </ul>
                 </div>
             </div>
@@ -82,7 +82,6 @@
                 });
             },
 
-
             customerDataSave(){
                 console.log('click save work')
                 axios.post('/customer-save', {
@@ -97,6 +96,19 @@
                         .catch(function (error) {
                             console.log(error,'eorro');
                         });
+            },
+
+            customerDelete(id, index){
+                alert('are you want to delete this?')
+                axios.post('/delete/'+id, {
+                    })
+                    .then(function (response) {
+                        //this.customers.data.splice(index, id);
+                        location.reload();
+                    })
+                    .catch(function (error) {
+                        console.log(error,'eorro');
+                    });
             },
         }
     }

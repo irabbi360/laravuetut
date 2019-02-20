@@ -24,3 +24,4 @@ Route::post('/customer-save', 'CustomerController@save');
 Route::get('/customer-list', 'CustomerController@customerList');
 Route::get('/customer-edit/{id}', 'CustomerController@edit');
 Route::post('/customer-update/{id}', 'CustomerController@customerUpdate');
+Route::post('/delete/{id}', 'CustomerController@delete');

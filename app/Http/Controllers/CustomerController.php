@@ -48,4 +48,10 @@ class CustomerController extends Controller
 
         return 'update done';
     }
+
+    public function delete($id)
+    {
+        Customer::find($id)->delete();
+        return 'deleted';
+    }
 }

@@ -1853,6 +1853,15 @@ __webpack_require__.r(__webpack_exports__);
       }).catch(function (error) {
         console.log(error, 'eorro');
       });
+    },
+    customerDelete: function customerDelete(id, index) {
+      alert('are you want to delete this?');
+      axios.post('/delete/' + id, {}).then(function (response) {
+        //this.customers.data.splice(index, id);
+        location.reload();
+      }).catch(function (error) {
+        console.log(error, 'eorro');
+      });
     }
   }
 });
@@ -37020,7 +37029,21 @@ var render = function() {
                   ),
                   _c("a", { attrs: { href: "customer-edit/" + customer.id } }, [
                     _vm._v("Edit")
-                  ])
+                  ]),
+                  _vm._v(" | "),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.customerDelete(customer.id, index)
+                        }
+                      }
+                    },
+                    [_vm._v("Delete")]
+                  )
                 ])
               })
             ],
