@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/customer', 'CustomerController@index');
 Route::post('/customer-save', 'CustomerController@save');
 Route::get('/customer-list', 'CustomerController@customerList');
+Route::get('/customer-edit/{id}', 'CustomerController@edit');
+Route::post('/customer-update/{id}', 'CustomerController@customerUpdate');
