@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
+    // unique number generate
+    function invoiceNumber()
+        {
+            $latest = App\Order::latest()->first();
+
+            if (! $latest) {
+                return 'arm0001';
+            }
+
+            $string = preg_replace("/[^0-9\.]/", '', $latest->invoice_number);
+
+            return 'arm' . sprintf('%04d', $string+1);
+        }
 }
